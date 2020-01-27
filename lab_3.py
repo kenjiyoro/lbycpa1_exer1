@@ -1,0 +1,126 @@
+#Laboratory Activity 4
+print("Select one of the following: ")
+print(" [1] Axial Deformation : δ = FLo/AE")
+print(" [2] Reynold's Number : Re = pvl/μ")
+print(" [Q] Quit.")
+Choice = input("Your Choice: ")
+
+if Choice == "1":
+    print("For Axial Deformation : δ = FLo/AE")
+    print(" [1] F : Axial Force")
+    print(" [2] Lo : Original length")
+    print(" [3] A : Cross-sectional area")
+    print(" [4] E : Modulus of Elasticity")
+    print(" [5] δ : Axial Deformation")
+    AxDChoice = input("What variable do you want to be solved?: ") 
+    if AxDChoice == "1":
+        OriginalLength = input("Value of Original Length [Lo]: ")
+        Area = input("Value of Cross-sectional Area [A]: ")
+        MoE = input("Value of Modulus of elasticity [E]: ")
+        AxialDef = input("Value of Axial Deformation [δ]: ")
+        ATop = int(AxialDef) * int(Area)* int(MoE)
+        BBot = int(OriginalLength)
+        AxFoAns = int(ATop) / int(BBot)
+        print("The Axial force is",AxFoAns, "kips" )
+    if AxDChoice == "2":
+        AxF = input("Value of Axial force [F]: ")
+        Area = input("Value of Cross-sectional Area [A]: ")
+        MoE = input("Value of Modulus of elasticity [E]: ")
+        AxialDef = input("Value of Axial Deformation [δ]: ")
+        ATop = int(AxialDef) * int(Area)* int(MoE)
+        BBot2 = int(AxF)
+        OLAns = int(ATop) / int(BBot2)
+        print("The Original Length is", OLAns, "meters")
+    if AxDChoice == "3":
+        AxF = input("Value of Axial force [F]: ")
+        OriginalLength = input("Value of Original Length [Lo]: ")
+        MoE = input("Value of Modulus of elasticity [E]: ")
+        AxialDef = input("Value of Axial Deformation [δ]: ")
+        ATop2 = int(AxF) * int(OriginalLength)
+        BBot3 = int(AxialDef) * int(MoE)
+        CSArAns = int(ATop2) / int(BBot3)
+        print("The Cross-sectional Area is", CSArAns, "meters squared")
+    if AxDChoice == "4":
+        AxF = input("Value of Axial force [F]: ")
+        OriginalLength = input("Value of Original Length [Lo]: ")
+        Area = input("Value of Cross-sectional Area [A]: ")
+        AxialDef = input("Value of Axial Deformation [δ]: ")
+        ATop3 = int(AxF) * int(OriginalLength)
+        BBot4 = int(AxialDef) * int(Area)
+        MoEAns = int(ATop3) / int(BBot4)
+        print("The Modulus of Elasticity is", MoEAns, "pascals")
+    if AxDChoice == "5":
+        AxF = input("Value of Axial force [F]: ")
+        OriginalLength = input("Value of Original Length [Lo]: ")
+        Area = input("Value of Cross-sectional Area [A]: ")
+        MoE = input("Value of Modulus of elasticity [E]: ")
+        ATop4 = int(AxF) * int(OriginalLength)
+        BBot5 = int(Area) * int(MoE)
+        AxiDefAns = int(ATop4) / int(BBot5)
+        print("The Axial Deformation is", AxiDefAns,)
+
+if Choice == "2":
+    print("For Reynold's Number : Re = pvl/μ")
+    print(" [1] p : Density")
+    print(" [2] v : Velocity")
+    print(" [3] l : Length of Fluid Travel")
+    print(" [4] μ : Fluid Viscosity")
+    print(" [5] Re : Reynold's Number")
+    ReyChoice = input("What variable do you want to be solved?: ")
+    if ReyChoice == "1":
+        ReyNo = input("Value of Reynold's Number [Re]: ")
+        FV = input("Value of Fluid Viscosity [μ]: ")
+        Velo = input("Value of Velocity [v]: ")
+        LFT = input("Value of Length of Fluid Travel [l]: ")
+        BTop = int(ReyNo) * int(FV)
+        ABot = int(Velo)* int(LFT)
+        DensAns = int(ATop) / int(BBot)
+        print("The Density is",DensAns, "kgm3" )
+    if ReyChoice == "2":
+        ReyNo = input("Value of Reynold's Number [Re]: ")
+        FV = input("Value of Fluid Viscosity [μ]: ")
+        Dens = input("Value of Density [p]: ")
+        LFT = input("Value of Length of Fluid Travel [l]: ")
+        BTop = int(ReyNo) * int(FV)
+        ABot2 = int(Dens)* int(LFT)
+        VeloAns = int(BTop) / int(ABot2)
+        print("The Velocity is",DensAns, "m/s" )
+    if ReyChoice == "3":
+        ReyNo = input("Value of Reynold's Number [Re]: ")
+        FV = input("Value of Fluid Viscosity [μ]: ")
+        Dens = input("Value of Density [p]: ")
+        Velo = input("Value of Velocity [v]: ")
+        BTop = int(ReyNo) * int(FV)
+        ABot3 = int(Dens)* int(Velo)
+        LFTAns = int(BTop) / int(ABot3)
+        print("The Length of Fluid Travel is",LFTAns)
+    if ReyChoice == "4":
+        ReyNo = input("Value of Reynold's Number [Re]: ")
+        LFT = input("Value of Length of Fluid Travel [l]: ")
+        Dens = input("Value of Density [p]: ")
+        Velo = input("Value of Velocity [v]: ")
+        BTop2 = int(Dens) * int(Velo) * int(LFT)
+        ABot4 = int(ReyNo)
+        FVAns = int(BTop2) / int(ABot4)
+        print("The Length of Fluid Travel is",FVAns)
+    if ReyChoice == "5":
+        LFT = input("Value of Length of Fluid Travel [l]: ")
+        FV = input("Value of Fluid Viscosity [μ]: ")
+        Dens = input("Value of Density [p]: ")
+        Velo = input("Value of Velocity [v]: ")
+        BTop3 = int(Dens) * int(Velo) * int(LFT)
+        ABot5 = int(FV)
+        RNAns = int(BTop3) / int(ABot5)
+        print("The Reynold's Number is",RNAns)
+
+if Choice =="Q":
+    print("Quitting...")
+    exit()
+else:
+    input("Invalid Choice. Prease try again. ")
+
+
+
+    
+
+
